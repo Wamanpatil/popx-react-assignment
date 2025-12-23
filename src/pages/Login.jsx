@@ -4,7 +4,7 @@ const Login = () => {
   const navigate = useNavigate();
 
   const handleSubmit = (e) => {
-    e.preventDefault(); // 🔴 stop refresh
+    e.preventDefault();
     navigate("/profile");
   };
 
@@ -12,7 +12,7 @@ const Login = () => {
     <div className="auth-container">
       <div className="auth-card">
         <h2>Signin to your PopX account</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        <p>Lorem ipsum dolor sit amet.</p>
 
         <form onSubmit={handleSubmit}>
           <label>Email Address</label>
@@ -21,15 +21,15 @@ const Login = () => {
           <label>Password</label>
           <input type="password" required />
 
-          <button type="submit" className="primary-btn">
+          <button className="primary-btn" type="submit">
             Login
           </button>
         </form>
 
-        <div className="link-text">
+        <p className="link-text">
           Don’t have an account?{" "}
-          <a onClick={() => navigate("/signup")}>Create Account</a>
-        </div>
+          <span onClick={() => navigate("/signup")}>Create Account</span>
+        </p>
       </div>
     </div>
   );

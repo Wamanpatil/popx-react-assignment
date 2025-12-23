@@ -7,13 +7,11 @@ const Landing = () => {
         <h1>Welcome to PopX</h1>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
 
-        {/* Create Account Button */}
-        <Link to="/signup" className="primary-btn link-btn">
+        <Link to="/signup" className="primary-btn">
           Create Account
         </Link>
 
-        {/* Login Button */}
-        <Link to="/login" className="secondary-btn link-btn">
+        <Link to="/login" className="secondary-btn">
           Already Registered? Login
         </Link>
       </div>
