@@ -1,22 +1,32 @@
 import { useNavigate } from "react-router-dom";
-import Button from "../components/Button";
-import "../styles/auth.css";
 
 const Landing = () => {
   const navigate = useNavigate();
 
   return (
-    <div className="screen">
-      <h2>Welcome to PopX</h2>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+    <>
+      <h1 style={{ marginTop: "120px", marginBottom: "10px" }}>
+        Welcome to PopX
+      </h1>
 
-      <Button text="Create Account" onClick={() => navigate("/signup")} />
-      <Button
-        text="Already Registered? Login"
-        variant="secondary"
+      <p style={{ color: "#777", marginBottom: "40px" }}>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+      </p>
+
+      <button
+        className="primary-btn"
+        onClick={() => navigate("/signup")}
+      >
+        Create Account
+      </button>
+
+      <button
+        className="secondary-btn"
         onClick={() => navigate("/login")}
-      />
-    </div>
+      >
+        Already Registered? Login
+      </button>
+    </>
   );
 };
 
