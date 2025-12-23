@@ -1,53 +1,85 @@
-import "../styles/auth.css";
 import { useNavigate } from "react-router-dom";
+import { useState } from "react";
 
-export default function Signup() {
+const Signup = () => {
   const navigate = useNavigate();
 
+  const [formData, setFormData] = useState({
+    name: "",
+    phone: "",
+    email: "",
+    password: "",
+    company: "",
+    agency: "yes",
+  });
+
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault(); // 🔴 VERY IMPORTANT
+    navigate("/profile");
+  };
+
   return (
-    <div className="page">
-      <h2>Create your PopX account</h2>
+    <div className="auth-container">
+      <div className="auth-card">
+        <h2>Create your PopX account</h2>
 
-      <div className="form-group">
-        <label>Full Name*</label>
-        <input placeholder="Marry Doe" />
-      </div>
+        <form onSubmit={handleSubmit}>
+          <label>Full Name*</label>
+          <input name="name" onChange={handleChange} required />
 
-      <div className="form-group">
-        <label>Phone number*</label>
-        <input placeholder="+91 9876543210" />
-      </div>
+          <label>Phone number*</label>
+          <input name="phone" onChange={handleChange} required />
 
-      <div className="form-group">
-        <label>Email address*</label>
-        <input placeholder="example@email.com" />
-      </div>
+          <label>Email address*</label>
+          <input name="email" onChange={handleChange} required />
 
-      <div className="form-group">
-        <label>Password*</label>
-        <input type="password" placeholder="Enter password" />
-      </div>
+          <label>Password*</label>
+          <input type="password" name="password" onChange={handleChange} required />
 
-      <div className="form-group">
-        <label>Company name</label>
-        <input placeholder="Company Name" />
-      </div>
+          <label>Company name</label>
+          <input name="company" onChange={handleChange} />
 
-      <p style={{ fontSize: "14px", marginTop: "8px" }}>
-        Are you an Agency?
-      </p>
+          <label>Are you an Agency?</label>
+          <div className="radio-group">
+            <label>
+              <input
+                type="radio"
+                name="agency"
+                value="yes"
+                checked={formData.agency === "yes"}
+                onChange={handleChange}
+              />
+              Yes
+            </label>
 
-      <div style={{ marginBottom: "20px" }}>
-        <input type="radio" name="agency" /> Yes
-        <input type="radio" name="agency" style={{ marginLeft: "20px" }} /> No
-      </div>
+            <label>
+              <input
+                type="radio"
+                name="agency"
+                value="no"
+                checked={formData.agency === "no"}
+                onChange={handleChange}
+              />
+              No
+            </label>
+          </div>
 
-      <button className="primary-btn">Create Account</button>
+          <button type="submit" className="primary-btn">
+            Create Account
+          </button>
+        </form>
 
-      <div className="secondary-text">
-        Already have an account?{" "}
-        <span onClick={() => navigate("/login")}>Login</span>
+        <div className="link-text">
+          Already have an account?{" "}
+          <a onClick={() => navigate("/login")}>Login</a>
+        </div>
       </div>
     </div>
   );
-}
+};
+
+export default Signup;

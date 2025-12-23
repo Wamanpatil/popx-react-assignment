@@ -1,32 +1,38 @@
-import "../styles/auth.css";
 import { useNavigate } from "react-router-dom";
 
-export default function Login() {
+const Login = () => {
   const navigate = useNavigate();
 
+  const handleSubmit = (e) => {
+    e.preventDefault(); // 🔴 stop refresh
+    navigate("/profile");
+  };
+
   return (
-    <div className="page">
-      <h2>Signin to your PopX account</h2>
-      <p style={{ margin: "10px 0 24px", color: "#666" }}>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-      </p>
+    <div className="auth-container">
+      <div className="auth-card">
+        <h2>Signin to your PopX account</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
 
-      <div className="form-group">
-        <label>Email Address</label>
-        <input placeholder="Enter email address" />
-      </div>
+        <form onSubmit={handleSubmit}>
+          <label>Email Address</label>
+          <input required />
 
-      <div className="form-group">
-        <label>Password</label>
-        <input type="password" placeholder="Enter password" />
-      </div>
+          <label>Password</label>
+          <input type="password" required />
 
-      <button className="primary-btn">Login</button>
+          <button type="submit" className="primary-btn">
+            Login
+          </button>
+        </form>
 
-      <div className="secondary-text">
-        Don&apos;t have an account?{" "}
-        <span onClick={() => navigate("/signup")}>Create Account</span>
+        <div className="link-text">
+          Don’t have an account?{" "}
+          <a onClick={() => navigate("/signup")}>Create Account</a>
+        </div>
       </div>
     </div>
   );
-}
+};
+
+export default Login;

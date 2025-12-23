@@ -1,5 +1,26 @@
 /* =========================
-   Auth Pages (Login / Signup)
+   Header & Navigation
+   ========================= */
+
+.page-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.back-arrow {
+  font-size: 22px;
+  cursor: pointer;
+  margin-right: 12px;
+}
+
+.page-title {
+  font-size: 22px;
+  font-weight: 600;
+}
+
+/* =========================
+   Form Layout
    ========================= */
 
 .form-group {
@@ -27,19 +48,24 @@
   border-color: #6c3cff;
 }
 
+/* =========================
+   Buttons
+   ========================= */
+
 .primary-btn {
-  margin-top: 24px;
+  width: 100%;
   padding: 14px;
   background: #6c3cff;
-  color: white;
+  color: #ffffff;
   border: none;
   border-radius: 8px;
   font-size: 16px;
   cursor: pointer;
+  margin-top: 20px;
 }
 
 .secondary-text {
-  margin-top: 14px;
+  margin-top: 16px;
   font-size: 14px;
   text-align: center;
 }
