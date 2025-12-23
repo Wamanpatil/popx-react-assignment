@@ -1,72 +1,53 @@
-.screen {
-  padding: 24px;
+/* -------- Auth Screens (Login / Signup) -------- */
+
+.auth-screen {
   height: 100%;
+  background: #f5f6f8;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
-h2 {
+.auth-card {
+  background: #e9ecef;
+  margin: 40px 16px 0;
+  padding: 24px;
+  border-radius: 18px;
+}
+
+.auth-card h2 {
   font-size: 22px;
-  margin-bottom: 10px;
+  margin-bottom: 8px;
 }
 
-p {
+.auth-card p {
   font-size: 14px;
-  color: #777;
+  color: #6c757d;
   margin-bottom: 20px;
 }
 
-.btn {
-  width: 100%;
-  padding: 14px;
-  border: none;
-  border-radius: 8px;
-  font-size: 14px;
-  cursor: pointer;
-  margin-bottom: 12px;
-}
+/* Input spacing handled by Input component */
 
-.btn.primary {
-  background: #6c25ff;
-  color: #ffffff;
-}
-
-.btn.secondary {
-  background: #e5d9ff;
-  color: #6c25ff;
-}
-
-.input-group {
-  margin-bottom: 16px;
-}
-
-.input-group label {
-  font-size: 12px;
-  color: #6c25ff;
-  display: block;
-  margin-bottom: 4px;
-}
-
-.input-group input {
-  width: 100%;
-  padding: 12px;
-  border-radius: 6px;
-  border: 1px solid #ccc;
-}
-
-.profile-card {
+/* Footer navigation */
+.auth-footer {
+  background: #ffffff;
+  padding: 14px 20px;
   display: flex;
+  justify-content: space-between;
   align-items: center;
-  gap: 12px;
-  margin-top: 20px;
+  border-top: 1px solid #eaeaea;
 }
 
-.profile-card img {
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
+.auth-footer .icon {
+  font-size: 18px;
 }
 
-.bio {
-  font-size: 14px;
+.auth-footer .arrow {
+  font-size: 20px;
+  color: #888;
+}
+
+.auth-footer .step {
+  font-size: 13px;
   color: #555;
-  margin-top: 20px;
 }
