@@ -1,53 +1,51 @@
-/* -------- Auth Screens (Login / Signup) -------- */
+/* =========================
+   Auth Pages (Login / Signup)
+   ========================= */
 
-.auth-screen {
-  height: 100%;
-  background: #f5f6f8;
+.form-group {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  margin-bottom: 16px;
 }
 
-.auth-card {
-  background: #e9ecef;
-  margin: 40px 16px 0;
-  padding: 24px;
-  border-radius: 18px;
-}
-
-.auth-card h2 {
-  font-size: 22px;
-  margin-bottom: 8px;
-}
-
-.auth-card p {
-  font-size: 14px;
-  color: #6c757d;
-  margin-bottom: 20px;
-}
-
-/* Input spacing handled by Input component */
-
-/* Footer navigation */
-.auth-footer {
-  background: #ffffff;
-  padding: 14px 20px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  border-top: 1px solid #eaeaea;
-}
-
-.auth-footer .icon {
-  font-size: 18px;
-}
-
-.auth-footer .arrow {
-  font-size: 20px;
-  color: #888;
-}
-
-.auth-footer .step {
+.form-group label {
   font-size: 13px;
-  color: #555;
+  font-weight: 600;
+  color: #6c3cff;
+  margin-bottom: 6px;
+}
+
+.form-group input {
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #dcdcdc;
+  font-size: 14px;
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: #6c3cff;
+}
+
+.primary-btn {
+  margin-top: 24px;
+  padding: 14px;
+  background: #6c3cff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.secondary-text {
+  margin-top: 14px;
+  font-size: 14px;
+  text-align: center;
+}
+
+.secondary-text span {
+  color: #6c3cff;
+  cursor: pointer;
+  font-weight: 600;
 }

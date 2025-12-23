@@ -1,27 +1,57 @@
-import "../styles/auth.css";
-
-const Profile = () => {
+export default function Profile() {
   return (
-    <div className="screen">
-      <h2>Account Settings</h2>
+    <div className="page">
+      {/* Header */}
+      <h2 style={styles.title}>Account Settings</h2>
 
-      <div className="profile-card">
-        <img
-          src="https://i.pravatar.cc/100"
-          alt="profile"
-        />
+      {/* Profile Card */}
+      <div style={styles.profileCard}>
+        <div style={styles.avatar}></div>
+
         <div>
-          <h4>Marry Doe</h4>
-          <p>marry@example.com</p>
+          <h4 style={styles.name}>Marry Doe</h4>
+          <p style={styles.email}>marry.doe@email.com</p>
         </div>
       </div>
 
-      <p className="bio">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
-        do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+      {/* Description */}
+      <p style={styles.description}>
+        Lorem Ipsum Dolor Sit Amet, Consetetur Sadipscing Elitr, Sed Diam Nonumy
+        Eirmod Tempor Invidunt Ut Labore Et Dolore Magna Aliquyam Erat, Sed Diam.
       </p>
     </div>
   );
-};
+}
 
-export default Profile;
+const styles = {
+  title: {
+    fontSize: "22px",
+    marginBottom: "20px"
+  },
+  profileCard: {
+    display: "flex",
+    alignItems: "center",
+    gap: "16px",
+    marginBottom: "20px"
+  },
+  avatar: {
+    width: "64px",
+    height: "64px",
+    borderRadius: "50%",
+    backgroundColor: "#ddd"
+  },
+  name: {
+    margin: 0,
+    fontSize: "16px"
+  },
+  email: {
+    margin: "4px 0 0",
+    fontSize: "14px",
+    color: "#666"
+  },
+  description: {
+    fontSize: "14px",
+    lineHeight: "1.6",
+    color: "#555"
+  }
+};

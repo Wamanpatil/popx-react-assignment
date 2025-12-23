@@ -1,44 +1,36 @@
+/* Global reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Center mobile container */
+body {
+  background: #f5f6f8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+/* Mobile app container */
+.app-container {
+  width: 375px; /* Mobile width */
+  min-height: 100vh;
+  background: #ffffff;
+  border-radius: 18px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  overflow: hidden;
+}
+
 /* =========================
-   Button Styles (PopX UI)
+   PAGE WRAPPER (IMPORTANT)
    ========================= */
-
-.primary-btn {
+.page {
+  display: flex;
+  flex-direction: column;
   width: 100%;
-  padding: 14px;
-  background-color: #6c3cff; /* PopX purple */
-  color: #ffffff;
-  border: none;
-  border-radius: 8px;
-  font-size: 16px;
-  font-weight: 500;
-  cursor: pointer;
-  margin-bottom: 12px;
-  transition: background-color 0.2s ease;
-}
-
-.primary-btn:hover {
-  background-color: #5a30d1;
-}
-
-.primary-btn:disabled {
-  background-color: #cfc6ff;
-  cursor: not-allowed;
-}
-
-/* Secondary Button */
-.secondary-btn {
-  width: 100%;
-  padding: 14px;
-  background-color: #e4d9ff;
-  color: #4b2cb3;
-  border: none;
-  border-radius: 8px;
-  font-size: 15px;
-  font-weight: 500;
-  cursor: pointer;
-  transition: background-color 0.2s ease;
-}
-
-.secondary-btn:hover {
-  background-color: #d8c9ff;
+  padding: 24px;
 }

@@ -1,33 +1,49 @@
 import { useNavigate } from "react-router-dom";
 
-const Landing = () => {
+export default function Landing() {
   const navigate = useNavigate();
 
   return (
-    <>
-      <h1 style={{ marginTop: "120px", marginBottom: "10px" }}>
-        Welcome to PopX
-      </h1>
-
-      <p style={{ color: "#777", marginBottom: "40px" }}>
+    <div className="page">
+      <h1>Welcome to PopX</h1>
+      <p style={{ margin: "12px 0 30px", color: "#666" }}>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit.
       </p>
 
       <button
-        className="primary-btn"
+        style={buttonPrimary}
         onClick={() => navigate("/signup")}
       >
         Create Account
       </button>
 
       <button
-        className="secondary-btn"
+        style={buttonSecondary}
         onClick={() => navigate("/login")}
       >
         Already Registered? Login
       </button>
-    </>
+    </div>
   );
+}
+
+const buttonPrimary = {
+  padding: "14px",
+  background: "#6c3cff",
+  color: "#fff",
+  border: "none",
+  borderRadius: "8px",
+  fontSize: "16px",
+  cursor: "pointer",
+  marginBottom: "12px"
 };
 
-export default Landing;
+const buttonSecondary = {
+  padding: "14px",
+  background: "#e6ddff",
+  color: "#6c3cff",
+  border: "none",
+  borderRadius: "8px",
+  fontSize: "16px",
+  cursor: "pointer"
+};

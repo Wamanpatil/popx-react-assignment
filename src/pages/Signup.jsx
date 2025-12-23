@@ -1,44 +1,53 @@
+import "../styles/auth.css";
 import { useNavigate } from "react-router-dom";
-import Input from "../components/Input";
 
-const Signup = () => {
+export default function Signup() {
   const navigate = useNavigate();
 
   return (
-    <>
-      <h1>Create your PopX account</h1>
+    <div className="page">
+      <h2>Create your PopX account</h2>
 
-      <Input label="Full Name*" placeholder="Marry Doe" />
-      <Input label="Phone number*" placeholder="+91 9876543210" />
-      <Input label="Email address*" placeholder="example@email.com" />
-      <Input label="Password*" type="password" placeholder="Enter password" />
-      <Input label="Company name" placeholder="Company Name" />
-
-      <p style={{ marginTop: "20px" }}>Are you an Agency?</p>
-
-      <div style={{ display: "flex", gap: "20px", marginBottom: "30px" }}>
-        <label><input type="radio" checked /> Yes</label>
-        <label><input type="radio" /> No</label>
+      <div className="form-group">
+        <label>Full Name*</label>
+        <input placeholder="Marry Doe" />
       </div>
 
-      <button
-        className="primary-btn"
-        onClick={() => navigate("/profile")}
-      >
-        Create Account
-      </button>
+      <div className="form-group">
+        <label>Phone number*</label>
+        <input placeholder="+91 9876543210" />
+      </div>
 
-      <p style={{ marginTop: "20px", fontSize: "14px" }}>
-        Already have an account?{" "}
-        <span
-          style={{ color: "#6c3cff", cursor: "pointer" }}
-          onClick={() => navigate("/login")}
-        >
-          Login
-        </span>
+      <div className="form-group">
+        <label>Email address*</label>
+        <input placeholder="example@email.com" />
+      </div>
+
+      <div className="form-group">
+        <label>Password*</label>
+        <input type="password" placeholder="Enter password" />
+      </div>
+
+      <div className="form-group">
+        <label>Company name</label>
+        <input placeholder="Company Name" />
+      </div>
+
+      <p style={{ fontSize: "14px", marginTop: "8px" }}>
+        Are you an Agency?
       </p>
-    </>
-  );
-};
 
-export default Signup;
+      <div style={{ marginBottom: "20px" }}>
+        <input type="radio" name="agency" /> Yes
+        <input type="radio" name="agency" style={{ marginLeft: "20px" }} /> No
+      </div>
+
+      <button className="primary-btn">Create Account</button>
+
+      <div className="secondary-text">
+        Already have an account?{" "}
+        <span onClick={() => navigate("/login")}>Login</span>
+      </div>
+    </div>
+  );
+}
