@@ -11,7 +11,12 @@ const Signup = () => {
   return (
     <div className="auth-container">
       <div className="auth-card">
-        <h2>Create your PopX account</h2>
+
+        {/* Header with Back Button */}
+        <div className="page-header">
+          <span className="back-btn" onClick={() => navigate(-1)}>←</span>
+          <span className="page-title">Create your PopX account</span>
+        </div>
 
         <form onSubmit={handleSubmit}>
           <label>Full Name*</label>
@@ -39,15 +44,10 @@ const Signup = () => {
             </label>
           </div>
 
-          <button className="primary-btn" type="submit">
+          <button type="submit" className="primary-btn">
             Create Account
           </button>
         </form>
-
-        <p className="link-text">
-          Already have an account?{" "}
-          <span onClick={() => navigate("/login")}>Login</span>
-        </p>
       </div>
     </div>
   );
