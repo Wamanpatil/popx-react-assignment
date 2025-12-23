@@ -1,27 +1,21 @@
-import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const Landing = () => {
-  const navigate = useNavigate();
-
   return (
     <div className="auth-container">
       <div className="auth-card">
         <h1>Welcome to PopX</h1>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
 
-        <button
-          className="primary-btn"
-          onClick={() => navigate("/signup")}
-        >
+        {/* Create Account Button */}
+        <Link to="/signup" className="primary-btn link-btn">
           Create Account
-        </button>
+        </Link>
 
-        <button
-          className="secondary-btn"
-          onClick={() => navigate("/login")}
-        >
+        {/* Login Button */}
+        <Link to="/login" className="secondary-btn link-btn">
           Already Registered? Login
-        </button>
+        </Link>
       </div>
     </div>
   );
